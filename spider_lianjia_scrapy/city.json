@@ -1,0 +1,110 @@
+[
+  {
+    "city": "北京",
+    "code": "bj"
+  },
+  {
+    "city": "廊坊",
+    "code": "lf"
+  },
+  {
+    "city": "成都",
+    "code": "cd"
+  },
+  {
+    "city": "重庆",
+    "code": "cq"
+  },
+  {
+    "city": "长沙",
+    "code": "cs"
+  },
+  {
+    "city": "南京",
+    "code": "nj"
+  },
+  {
+    "city": "大连",
+    "code": "dl"
+  },
+  {
+    "city": "青岛",
+    "code": "qd"
+  },
+  {
+    "city": "佛山",
+    "code": "fs"
+  },
+  {
+    "city": "深圳",
+    "code": "sz"
+  },
+  {
+    "city": "沈阳",
+    "code": "sy"
+  },
+  {
+    "city": "石家庄",
+    "code": "sjz"
+  },
+  {
+    "city": "广州",
+    "code": "gz"
+  },
+  {
+    "city": "天津",
+    "code": "tj"
+  },
+  {
+    "city": "杭州",
+    "code": "hz"
+  },
+  {
+    "city": "惠州",
+    "code": "hui"
+  },
+  {
+    "city": "合肥",
+    "code": "hf"
+  },
+  {
+    "city": "武汉",
+    "code": "wh"
+  },
+  {
+    "city": "无锡",
+    "code": "wx"
+  },
+  {
+    "city": "济南",
+    "code": "jn"
+  },
+  {
+    "city": "厦门",
+    "code": "xm"
+  },
+  {
+    "city": "西安",
+    "code": "xa"
+  },
+  {
+    "city": "烟台",
+    "code": "yt"
+  },
+  {
+    "city": "中山",
+    "code": "zs"
+  },
+  {
+    "city": "郑州",
+    "code": "zz"
+  },
+  {
+    "city": "上海",
+    "code": "sh"
+  },
+  {
+    "city": "苏州",
+    "code": "su"
+  }
+]
