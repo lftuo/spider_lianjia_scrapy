@@ -15,6 +15,12 @@ SPIDER_MODULES = ['spider_lianjia_scrapy.spiders']
 NEWSPIDER_MODULE = 'spider_lianjia_scrapy.spiders'
 
 
+
+MYSQL_HOST = 'localhost'
+MYSQL_DBNAME = 'spider_lianjia'
+MYSQL_USER = 'root'
+MYSQL_PASSWD = '123456'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'spider_lianjia_scrapy (+http://www.yourdomain.com)'
 
@@ -64,9 +70,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'spider_lianjia_scrapy.pipelines.SpiderLianjiaScrapyPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'spider_lianjia_scrapy.pipelines.SpiderLianjiaScrapyPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

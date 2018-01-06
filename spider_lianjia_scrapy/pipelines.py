@@ -4,15 +4,39 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+import logging
+
 from MySQLdb.cursors import DictCursor
 from twisted.enterprise import adbapi
 
 
 class SpiderLianjiaScrapyPipeline(object):
 
+    def __init__(self, dbpool):
+        self.dbpool = dbpool
+
     # pipeline默认调用
-    def process_item(self, item, spider):
+    def process_item(self, item,spider):
+        # 此处可进行数据清洗ETL
+        item = self.data_etl(item)
+        self.dbpool.runInteraction(self.__conditional_insert,item)
         return item
+
+    def data_etl(self,item):
+        price = item['house_price'].replace('均价 ','')
+        if ' 元/平' in price:
+            price.replace(' 元/平','')
+        # TODO 万/套的数据清洗
+        item['house_price'] = price
+        return item
+
+    def __conditional_insert(self, tx, item):
+        sql = "insert into spider_lianjia_new_house(city_name,area_name,house_name,house_where,house_area,house_price,house_url) values(%s,%s,%s,%s,%s,%s,%s)"
+        try:
+            params = (item['city_name'],item['a_name'],item['house_name'],item['house_where'],item['house_area'],item['house_price'],item['house_url'])
+            tx.execute(sql, params)
+        except Exception, e:
+            logging.exception(e)
 
     @classmethod
     def from_settings(cls,settings):
@@ -27,3 +51,5 @@ class SpiderLianjiaScrapyPipeline(object):
         )
         dbpool = adbapi.ConnectionPool('MySQLdb', **dbparams)
         return cls(dbpool)
+
+

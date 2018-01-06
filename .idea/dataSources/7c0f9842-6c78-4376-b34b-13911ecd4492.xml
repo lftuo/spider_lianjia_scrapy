@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="spider_lianjia@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="spider_lianjia">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="spider"/>
+    <schema id="7" parent="1" name="spider_shouji"/>
+    <schema id="8" parent="1" name="sys"/>
+    <schema id="9" parent="1" name="test"/>
+    <table id="10" parent="2" name="spider_lianjia_new_house"/>
+    <column id="11" parent="10" name="city_name">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="12" parent="10" name="area_name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="13" parent="10" name="house_name">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="14" parent="10" name="house_where">
+      <Position>4</Position>
+      <DataType>varchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="15" parent="10" name="house_area">
+      <Position>5</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="16" parent="10" name="house_price">
+      <Position>6</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="17" parent="10" name="house_url">
+      <Position>7</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+  </database-model>
+</dataSource>
