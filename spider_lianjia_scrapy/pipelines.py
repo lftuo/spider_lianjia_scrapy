@@ -6,6 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import logging
 
+import time
 from MySQLdb.cursors import DictCursor
 from twisted.enterprise import adbapi
 
@@ -31,9 +32,10 @@ class SpiderLianjiaScrapyPipeline(object):
         return item
 
     def __conditional_insert(self, tx, item):
-        sql = "insert into spider_lianjia_new_house(city_name,area_name,house_name,house_where,house_area,house_price,house_url) values(%s,%s,%s,%s,%s,%s,%s)"
+        spider_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+        sql = "insert into spider_lianjia_new_house(city_name,area_name,house_name,house_where,house_area,house_price,house_url,spider_time) values(%s,%s,%s,%s,%s,%s,%s,%s)"
         try:
-            params = (item['city_name'],item['a_name'],item['house_name'],item['house_where'],item['house_area'],item['house_price'],item['house_url'])
+            params = (item['city_name'],item['a_name'],item['house_name'],item['house_where'],item['house_area'],item['house_price'],item['house_url'],spider_time)
             tx.execute(sql, params)
         except Exception, e:
             logging.exception(e)

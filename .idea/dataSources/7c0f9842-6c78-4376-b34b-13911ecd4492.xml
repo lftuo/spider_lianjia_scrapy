@@ -56,5 +56,9 @@
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
+    <column id="18" parent="10" name="spider_time">
+      <Position>8</Position>
+      <DataType>date|0</DataType>
+    </column>
   </database-model>
 </dataSource>
