@@ -24,9 +24,7 @@ class SpiderLianjiaScrapyPipeline(object):
         return item
 
     def data_etl(self,item):
-        price = item['house_price'].replace('均价 ','')
-        if ' 元/平' in price:
-            price.replace(' 元/平','')
+        price = item['house_price'].replace('均价 ','').replace(' 元/平','')
         # TODO 万/套的数据清洗
         item['house_price'] = price
         return item

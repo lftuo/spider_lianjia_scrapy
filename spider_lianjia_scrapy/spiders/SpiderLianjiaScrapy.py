@@ -111,8 +111,6 @@ class SpiderLianjiaScrapy(scrapy.Spider):
                 logging.exception(e)
 
 
-
-
 if __name__ == '__main__':
     process = CrawlerProcess(get_project_settings())
     process.crawl('spider_lianjia_scrapy')
